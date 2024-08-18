@@ -1,0 +1,25 @@
+sequenceDiagram
+    participant Navegador
+    participant Servidor
+
+    Navegador->>Servidor:Usuario crea nota  y clic en el boton del formulario
+    Navegador->>Servidor: Envia solicitud HTTP POST a la dirección del servidor new_note.
+    activate Servidor
+    Servidor-->>Navegador:servidor responde con el código de estado HTTP 302. Se trata de una redirección de URL, con la que el servidor solicita al navegador que realice una nueva solicitud HTTP GET
+    deactivate Servidor
+
+    Navegador->>Servidor: solicitud HTTP: obtener la hoja de estilo (main.css)
+    activate Servidor
+    
+    Servidor-->>Navegador: the css file
+    deactivate Servidor
+
+    Navegador->>Servidor: solicitud HTTP: obtener el codigo JavaScript (main.js)
+    activate Servidor
+    Servidor-->>Navegador: the JavaScript file
+    deactivate Servidor
+
+    Navegador->>Servidor: solicitud HTTP:  datos sin procesar de las notas (data.json)
+    activate Servidor
+    Servidor-->>Navegador: data.json
+    deactivate Servidor

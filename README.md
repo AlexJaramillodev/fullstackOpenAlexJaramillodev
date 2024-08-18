@@ -1,1 +1,1 @@
-# fullstackOpenAlexJaramillodev
+Este es el repositorio para realizar el envio de trabajos del curso full Stack open de la universidad de Helsinki

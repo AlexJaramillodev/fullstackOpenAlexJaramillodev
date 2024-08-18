@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant Navegador
+    participant Servidor
+
+    Navegador->>Servidor: SOLICITUD GET https://studies.cs.helsinki.fi/exampleapp/spa
+    
+    activate Servidor
+    Servidor-->>Navegador:servidor responde con el código del archivo main.css 
+    Servidor-->>Navegador:servidor responde con el código del archivo spa.js 
+    
+    deactivate Servidor
+
+    Navegador->>Servidor: se ejecuta el spa.js y solicita las notas del archivo JSON 
+    Servidor-->>Navegador: se envian las notas en formato JSON  
+    activate Servidor
+  
+    
+   Note over Navegador, Servidor: Navegador agrega elementos HTML para mostrar las notas usando la DOM-API
+   
+    
