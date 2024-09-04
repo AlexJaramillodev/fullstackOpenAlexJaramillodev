@@ -1,18 +1,51 @@
 import { useState } from 'react'
 import './App.css'
 
-const Statics = ({estadistica, text}) =>{
+
+
+const StaticLine = ({text, value})=> {
+
+  return(
+    <div>
+      <p>{text} {value}</p>
+    </div>
+  )
+}
+
+
+const Statics = ({good, neutral, bad, total, promedio, positive, textbueno, textneutral, textbad, texttotal, textpromedio, textpositive}) =>{
+
+  if ( total === 0){
+
+    return (
+      <div>
+        <p>Aun no tenemos opiniones !!</p>
+      </div>
+      
+    )
+  }
 
   return (
     <div>
-      <p>{text}{estadistica}</p>
+      <p>{textbueno}{good}</p>
+      <p>{textneutral}{neutral}</p>
+      <p>{textbad}{bad}</p>
+      <p>{texttotal}{total}</p>
+      <p>{textpromedio}{promedio}</p>
+      <p>{textpositive}{positive}</p>
     </div>
   )
+}
 
+const Button = ({handleClick, text}) =>{
+
+  return (
+   <button onClick={handleClick}>{text}</button>
+  )
 }
 
 const App = () => {
-  // guarda los clics de cada botón en su propio estado
+  
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
@@ -21,10 +54,11 @@ const App = () => {
   const [porcentajeGood, setPorcentajeGood] = useState(0)
 
 
+
   const handleGoodClick = () =>{
     const updateGood = good +1
     setGood(updateGood)
-    
+        
     const newTotal = updateGood + neutral + bad
     setTotal(newTotal)
     setPromedio ( (updateGood - bad) / newTotal)
@@ -66,25 +100,24 @@ const App = () => {
     <div>
       <h1>UNICAFE</h1>
       <h2>Give Feedback</h2>
-      <button onClick={handleGoodClick}>Good</button>
-      <button onClick={handleNeutralClick}>Neutral</button>
-      <button onClick={handleBadClick}>Bad</button>
-      
+      <Button handleClick={handleGoodClick} text={'Good'}/>
+      <Button handleClick={handleNeutralClick} text={'Neutral'}/>
+      <Button handleClick={handleBadClick} text={'Bad'}/>
+
+          
       <h2>Statics</h2>
-      {/*<p>Good: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>Bad: {bad}</p>
-      <p>total: {total}</p>
-      <p>Promedio: {promedio}</p>
-      <p>% Positive: {porcentajeGood}</p>*/}
 
+      
+     <Statics textbueno='Good: ' good={good} textneutral='Neutral: ' neutral={neutral} textbad='Bad: ' bad={bad} texttotal='Total: ' total={total} textpromedio= 'Promedio: ' promedio={promedio} textpositive='Positive: ' positive={porcentajeGood} />  
+    
+    <hr />
 
-     <Statics text='Good: ' estadistica={good}/>  
-     <Statics text='Neutral: ' estadistica={neutral}/>  
-     <Statics text='Bad: ' estadistica={bad}/>  
-     <Statics text='Total: ' estadistica={total}/>  
-     <Statics text='Promedio: ' estadistica={promedio}/>  
-     <Statics text='Positive: ' estadistica={porcentajeGood}/>  
+    <StaticLine text='Good: ' value={good}/>
+    <StaticLine text='Neutral: ' value={neutral}/>
+    <StaticLine text='Bad: ' value={bad}/>
+    <StaticLine text='Total: ' value={total}/>
+    <StaticLine text='Promedio: ' value={promedio}/>
+    <StaticLine text='Positive: ' value={porcentajeGood}/>
 
     </div>
   )
