@@ -41,3 +41,11 @@
   color: #888;
 }
 
+body {
+  background-color: blue;
+  color: white;
+}
+
+button {
+  margin: 5px;
+}

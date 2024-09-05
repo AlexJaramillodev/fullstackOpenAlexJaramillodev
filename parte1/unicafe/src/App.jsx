@@ -27,12 +27,42 @@ const Statics = ({good, neutral, bad, total, promedio, positive, textbueno, text
 
   return (
     <div>
-      <p>{textbueno}{good}</p>
-      <p>{textneutral}{neutral}</p>
-      <p>{textbad}{bad}</p>
-      <p>{texttotal}{total}</p>
-      <p>{textpromedio}{promedio}</p>
-      <p>{textpositive}{positive}</p>
+      <table>        
+                 
+        <thead>
+          <tr>            
+            <th>Estadistica</th>
+            <th>Valor</th>
+          </tr>
+          </thead> 
+
+          <tbody>
+          <tr>
+              <td>{textbueno}</td>
+              <td>{good}</td>
+           </tr>
+           <tr> 
+              <td>{textneutral}</td>
+              <td>{neutral}</td>
+            </tr>
+            <tr>
+              <td>{textbad}</td>
+              <td>{bad}</td>
+            </tr>
+            <tr>
+              <td>{texttotal}</td>
+              <td>{total}</td>
+            </tr>
+            <tr>
+            <td>{textpromedio}</td>
+              <td>{promedio}</td>
+            </tr>
+            <tr>
+              <td>{textpositive}</td>
+              <td>{positive}</td>
+            </tr>
+          </tbody> 
+      </table>
     </div>
   )
 }
