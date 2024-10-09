@@ -45,7 +45,6 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin: 10px;
 }
 button:hover {
   border-color: #646cff;
@@ -67,27 +66,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+ul {
+  padding: 0;
+}
 
 li {
-  text-align: left;
-}
-
-.error {
-  color: red;
-  background: lightgrey;
-  font-size: 20px;
-  border: 2px solid red;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.exito {
-  color: green;
-  background: lightgrey;
-  font-size: 20px;
-  border: 2px solid green;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
+  list-style: none;
+  
 }

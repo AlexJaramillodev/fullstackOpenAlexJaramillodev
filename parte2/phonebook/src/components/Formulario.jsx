@@ -4,22 +4,22 @@ const Formulario = ({
   addPerson,
   newName,
   handlePersonChange,
-  newphone,
+  newNumber,
   handlePhoneChange,
 }) => {
   return (
     <>
       <form onSubmit={addPerson}>
         <div>
-          name:{" "}
-          <input type="text" value={newName} onChange={handlePersonChange} />
+          nombre:{" "}
+          <input id="nombre" type="text" value={newName} onChange={handlePersonChange} />
         </div>
         <div>
-          phone:{" "}
-          <input type="tel" value={newphone} onChange={handlePhoneChange} />
+          telefono:{" "}
+          <input id="telefono" type="tel" value={newNumber} onChange={handlePhoneChange} />
         </div>
         <div>
-          <button type="submit">add</button>
+          <button type="submit">Agregar</button>
         </div>
       </form>
     </>

@@ -6,6 +6,7 @@ const Filtro = ({ handleFilterchange, searchPersons }) => {
       <div>
         Buscar:{" "}
         <input
+          id="buscar"
           type="text"
           onChange={handleFilterchange}
           value={searchPersons}
