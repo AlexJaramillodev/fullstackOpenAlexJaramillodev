@@ -1,0 +1,11 @@
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld3VzZXIxIiwiaWQiOiI2Nzc5MmYzNjhmZTVjMzI1Y2Y5NWZmNGEiLCJpYXQiOjE3MzYzMzY5MTZ9.VnvVnnmPFJejOqV32GKGMWSvZyotfphWHKLS7Bi4kFo
+
+
+ {
+    "title": "blog adicional pasando el id del usuario",
+    "author": "Adrian Jaramillo",
+    "url": "http://blog.cleancoder.com/uncle-bob/2016/05/01/TypeWars.html",
+    "likes": 5
+ }
